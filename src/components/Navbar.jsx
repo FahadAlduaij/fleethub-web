@@ -104,7 +104,11 @@ export default function Navbar() {
         anchor="right"
         open={open}
         onClose={() => setOpen(false)}
-        slotProps={{ paper: { sx: { width: 280, bgcolor: 'background.default', p: 2 } } }}
+        slotProps={{
+          paper: {
+            sx: { width: '100vw', maxWidth: '100%', bgcolor: 'background.default', p: 2 },
+          },
+        }}
       >
         <Stack
           direction="row"
@@ -133,13 +137,6 @@ export default function Navbar() {
             </ListItemButton>
           ))}
         </List>
-        <ActionButton
-          href="#cta"
-          onClick={() => setOpen(false)}
-          sx={{ mt: 2, alignSelf: 'flex-start' }}
-        >
-          {nav.cta}
-        </ActionButton>
       </Drawer>
     </Box>
   );
