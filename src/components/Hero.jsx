@@ -1,11 +1,4 @@
-import {
-  Avatar,
-  AvatarGroup,
-  Box,
-  Container,
-  Stack,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Stack, Typography } from '@mui/material';
 import LocalShippingRoundedIcon from '@mui/icons-material/LocalShippingRounded';
 import BadgeRoundedIcon from '@mui/icons-material/BadgeRounded';
 import ReceiptLongRoundedIcon from '@mui/icons-material/ReceiptLongRounded';
@@ -94,42 +87,20 @@ export default function Hero() {
           ))}
 
           <Stack spacing={3} sx={{ alignItems: 'center', textAlign: 'center' }}>
-            {/* Badge with avatar stack — AVATAR PLACEHOLDERS: swap `src` for real
-              customer photos, 96×96 square crops. */}
+            {/* Trust badge */}
             <Stack
               direction="row"
-              spacing={1.5}
               sx={{
                 alignItems: 'center',
                 bgcolor: 'background.paper',
                 border: '1px solid',
                 borderColor: 'brand.border',
                 borderRadius: 999,
-                pl: 0.75,
-                pr: 2.25,
-                py: 0.75,
+                px: 2.25,
+                py: 1,
                 boxShadow: '0 8px 24px -18px rgba(14, 23, 42, 0.5)',
               }}
             >
-              <AvatarGroup
-                max={4}
-                sx={{
-                  '& .MuiAvatar-root': {
-                    width: 30,
-                    height: 30,
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    borderColor: 'background.paper',
-                    bgcolor: 'brand.softPrimaryStrong',
-                    color: 'primary.main',
-                  },
-                }}
-              >
-                <Avatar alt="">FM</Avatar>
-                <Avatar alt="">HR</Avatar>
-                <Avatar alt="">AC</Avatar>
-                <Avatar alt="">OP</Avatar>
-              </AvatarGroup>
               <Typography
                 sx={{
                   fontSize: { xs: '0.8125rem', sm: '0.875rem' },
