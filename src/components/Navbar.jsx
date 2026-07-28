@@ -78,7 +78,12 @@ export default function Navbar() {
           </Stack>
 
           <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-            <ActionButton href="#cta" sx={{ display: { xs: 'none', sm: 'inline-flex' } }}>
+            {/* Soft so the hero's solid CTA stays the one visual primary */}
+            <ActionButton
+              href="#cta"
+              variant="soft"
+              sx={{ display: { xs: 'none', sm: 'inline-flex' } }}
+            >
               {nav.cta}
             </ActionButton>
             <IconButton
