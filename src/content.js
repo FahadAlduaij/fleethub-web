@@ -78,9 +78,9 @@ export const howItWorks = {
         'FleetHub driver profile showing civil ID, licence expiry, contact, and work details',
     },
     {
-      title: 'Vehicles & Deliveries',
+      title: 'Vehicles & Maintenance',
       description:
-        'Assign vehicles, log maintenance, and record daily deliveries per driver.',
+        'Assign drivers to vehicles, log maintenance, and keep every service record in one place.',
       art: 'vehicle',
       image: '/service.png',
       imageAlt:
