@@ -103,7 +103,7 @@ export const howItWorks = {
     {
       title: 'Salaries & Expenses',
       description:
-        'Piece-rate and fixed payroll, petty cash, and contract-based expense tracking.',
+        'Run piece-rate and fixed payroll, log petty cash and deductions, and see exactly where every dinar went this month.',
       art: 'payroll',
       image: '/salary.png',
       // Much wider than the panel (1390×652) — cropping it to fill loses the
