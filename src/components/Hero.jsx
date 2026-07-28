@@ -63,20 +63,6 @@ export default function Hero() {
         pt: { xs: 9, md: 14 },
         pb: { xs: 11, md: 17 },
         overflow: 'hidden',
-        // Soft primary glow behind the headline
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: -180,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: 900,
-          height: 620,
-          borderRadius: '50%',
-          background: (theme) =>
-            `radial-gradient(closest-side, ${theme.palette.brand.glow}, transparent)`,
-          pointerEvents: 'none',
-        },
       }}
     >
       <Container maxWidth="lg" sx={{ position: 'relative' }}>
