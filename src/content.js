@@ -12,7 +12,7 @@ export const nav = {
   links: [
     { label: 'Features', href: '#features' },
     { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Testimonials', href: '#testimonials' },
+    { label: 'Who It’s For', href: '#roles' },
     { label: 'FAQ', href: '#faq' },
   ],
   cta: 'Get Started',
@@ -56,7 +56,11 @@ export const stats = {
     {
       stat: 'Day-to-Day',
       caption: 'Runs the daily grind',
-      points: ['Daily delivery logs', 'Petty cash & deductions', 'Full audit trail'],
+      points: [
+        'Daily delivery logs',
+        'Petty cash & deductions',
+        'Full audit trail',
+      ],
     },
   ],
 };
@@ -109,29 +113,45 @@ export const howItWorks = {
   ],
 };
 
-export const testimonials = {
-  label: 'Testimonials',
+export const roles = {
+  label: 'Who It’s For',
   headingTop: 'Trusted by the People',
   headingAccent: 'Running the Fleet',
-  subheading: 'Placeholder quotes — swap for real customer feedback before launch.',
+  subheading:
+    'One system, scoped to each role — every user sees only the companies and pages they are assigned.',
   cards: [
     {
-      quote:
-        'Placeholder quote. Describe how FleetHub replaced spreadsheets and put every company, driver, and vehicle under one roof.',
-      name: 'Placeholder Name',
-      role: 'Fleet Operations Manager',
+      title: 'Operations & Fleet',
+      art: 'ops',
+      description:
+        'Keep drivers, vehicles, and daily movement on record instead of in a group chat.',
+      points: [
+        'Driver-to-vehicle assignments',
+        'Daily delivery logs',
+        'Maintenance & handover forms',
+      ],
     },
     {
-      quote:
-        'Placeholder quote. Describe how payroll runs and Arabic payment vouchers now take minutes instead of days.',
-      name: 'Placeholder Name',
-      role: 'Head of Accounts',
+      title: 'HR & Admin',
+      art: 'hr',
+      description:
+        'Own every personnel file and know what lapses before it lapses, not after.',
+      points: [
+        'Driver & employee records',
+        'Contracts and renewals',
+        'Civil ID & licence expiry alerts',
+      ],
     },
     {
-      quote:
-        'Placeholder quote. Describe how document expiry alerts keep every driver licence and vehicle permit valid.',
-      name: 'Placeholder Name',
-      role: 'HR & Admin Lead',
+      title: 'Accounts & Payroll',
+      art: 'accounts',
+      description:
+        'Close the month with the numbers, the paperwork, and the audit trail in one place.',
+      points: [
+        'Piece-rate & fixed salaries',
+        'Petty cash and deductions',
+        'Arabic payment vouchers',
+      ],
     },
   ],
 };
