@@ -8,6 +8,14 @@ export const brand = {
   maker: 'by SoloHub',
 };
 
+// WhatsApp is the only real contact channel — every CTA points here.
+export const contact = {
+  whatsapp: '+965 9001 7795',
+  whatsappHref:
+    'https://wa.me/96590017795?text=' +
+    encodeURIComponent('Hi FleetHub — I’d like to book a demo.'),
+};
+
 export const nav = {
   links: [
     { label: 'Features', href: '#features' },
@@ -197,7 +205,7 @@ export const cta = {
   label: 'Get Started',
   headlineTop: 'Ready to simplify your fleet operations?',
   headlineAccent: 'Let’s talk.',
-  secondaryCta: 'Talk to Sales',
+  secondaryCta: 'Book a Demo',
 };
 
 export const footer = {

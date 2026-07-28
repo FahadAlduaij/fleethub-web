@@ -1,7 +1,7 @@
 import { Box, Container, Stack, Typography } from '@mui/material';
 import ActionButton from './ActionButton';
 import { PillLabel } from './SectionHeading';
-import { cta } from '../content';
+import { contact, cta } from '../content';
 
 export default function CTA() {
   return (
@@ -34,7 +34,10 @@ export default function CTA() {
             },
           }}
         >
-          <Stack spacing={3} sx={{ alignItems: 'center', position: 'relative' }}>
+          <Stack
+            spacing={3}
+            sx={{ alignItems: 'center', position: 'relative' }}
+          >
             <PillLabel label={cta.label} />
 
             <Typography variant="h2" component="h2" sx={{ maxWidth: 900 }}>
@@ -50,6 +53,9 @@ export default function CTA() {
               sx={{ alignItems: 'center', pt: 1 }}
             >
               <ActionButton
+                href={contact.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 size="large"
                 variant="soft"
                 sx={{ bgcolor: 'background.paper' }}
