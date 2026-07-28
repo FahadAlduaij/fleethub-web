@@ -88,28 +88,14 @@ export default function Hero() {
 
           <Stack spacing={3} sx={{ alignItems: 'center', textAlign: 'center' }}>
             {/* Trust badge */}
-            <Stack
-              direction="row"
+            <Typography
               sx={{
-                alignItems: 'center',
-                bgcolor: 'background.paper',
-                border: '1px solid',
-                borderColor: 'brand.border',
-                borderRadius: 999,
-                px: 2.25,
-                py: 1,
-                boxShadow: '0 8px 24px -18px rgba(14, 23, 42, 0.5)',
+                fontSize: { xs: '0.8125rem', sm: '0.875rem' },
+                fontWeight: 600,
               }}
             >
-              <Typography
-                sx={{
-                  fontSize: { xs: '0.8125rem', sm: '0.875rem' },
-                  fontWeight: 600,
-                }}
-              >
-                {hero.badge}
-              </Typography>
-            </Stack>
+              {hero.badge}
+            </Typography>
 
             <Typography variant="h1" component="h1" sx={{ maxWidth: 1120 }}>
               {hero.headlineTop}
