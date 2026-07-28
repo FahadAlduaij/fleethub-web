@@ -35,7 +35,6 @@ export const hero = {
   subhead:
     'Manage drivers, vehicles, deliveries, and payroll across multiple companies — built for Kuwait delivery fleets.',
   primaryCta: 'Book a Demo',
-  secondaryCta: 'See How It Works',
 };
 
 export const stats = {

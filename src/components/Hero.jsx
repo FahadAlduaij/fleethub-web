@@ -106,28 +106,12 @@ export default function Hero() {
               {hero.subhead}
             </Typography>
 
-            <Stack
-              direction="row"
-              spacing={1.5}
-              sx={{
-                pt: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
+            {/* One action only — everything points at booking a demo */}
+            <Box sx={{ pt: 1 }}>
               <ActionButton href="#cta" size="large">
                 {hero.primaryCta}
               </ActionButton>
-              {/* Secondary CTA is desktop-only — one clear action on phones */}
-              <ActionButton
-                href="#how-it-works"
-                size="large"
-                variant="soft"
-                sx={{ display: { xs: 'none', sm: 'inline-flex' } }}
-              >
-                {hero.secondaryCta}
-              </ActionButton>
-            </Stack>
+            </Box>
           </Stack>
         </Box>
 
