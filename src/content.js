@@ -106,10 +106,11 @@ export const howItWorks = {
         'Piece-rate and fixed payroll, petty cash, and contract-based expense tracking.',
       art: 'payroll',
       image: '/salary.png',
-      // Wide shot — shown whole rather than cropped to the panel
+      // Much wider than the panel (1390×652) — cropping it to fill loses the
+      // heading and the total on mobile, so it is shown whole instead
       imageFit: 'contain',
       imageAlt:
-        'FleetHub expense breakdown chart totalling 718.000 KWD across salaries, services, and petty cash',
+        'FleetHub monthly expenses chart tracking spend across the year',
     },
     {
       title: 'Live Notifications',

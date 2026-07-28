@@ -19,7 +19,7 @@ const ART = {
   alerts: NotificationsActiveRoundedIcon,
 };
 
-function ArtPanel({ art, image, alt, zoom = 1, fit = 'cover' }) {
+function ArtPanel({ art, image, alt, zoom = 1, fit = 'cover', position }) {
   const Icon = ART[art];
   const contained = fit === 'contain';
   return (
@@ -60,7 +60,7 @@ function ArtPanel({ art, image, alt, zoom = 1, fit = 'cover' }) {
             width: '100%',
             height: '100%',
             objectFit: fit,
-            objectPosition: contained ? 'center' : 'center top',
+            objectPosition: position ?? (contained ? 'center' : 'center top'),
             p: contained ? { xs: 1.5, md: 2 } : 0,
             // Dense shots (wide tables) need enlarging to stay legible
             transform: `scale(${zoom})`,
@@ -125,6 +125,7 @@ export default function HowItWorks() {
                   alt={card.imageAlt}
                   zoom={card.imageZoom}
                   fit={card.imageFit}
+                  position={card.imagePosition}
                 />
                 <Box sx={{ px: { xs: 1, md: 1.5 }, pt: 3, pb: 1.5 }}>
                   <Typography variant="h5" sx={{ mb: 1 }}>
