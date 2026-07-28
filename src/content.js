@@ -140,32 +140,33 @@ export const faq = {
   label: 'FAQ',
   headingTop: 'Questions,',
   headingAccent: 'Answered',
-  subheading: 'Placeholder answers — replace with your final wording.',
+  subheading:
+    'Straight answers on access, payroll, and keeping every document valid.',
   items: [
     {
       question: 'Can one user manage several companies from a single account?',
       answer:
-        'Placeholder answer. Explain that one login can be scoped to multiple companies, with permissions set per company so staff only see the entities they are assigned to.',
+        'Yes. Each user gets a set of assigned companies plus per-page permissions, and a top-bar selector narrows every list, dashboard, and export to whichever companies they pick. The two controls are independent, so an accountant can hold payroll access across three companies while an HR user sees only one — and a user with no companies assigned sees nothing at all. Viewer-role accounts can read but never write.',
     },
     {
       question: 'Does FleetHub generate Arabic payment vouchers?',
       answer:
-        'Placeholder answer. Explain that payment vouchers are produced in Arabic with amounts in KWD, ready to print or attach to accounting records.',
+        'Yes. Payment vouchers spell the KWD amount out in formal Arabic — dinars and fils — and are available from driver salaries, employee salaries, petty cash, and individual driver and employee records. The system also prints fuel card, phone, and SIM card receipts, and CSV exports are written so Arabic opens correctly in Excel.',
     },
     {
       question: 'How is driver pay calculated?',
       answer:
-        'Placeholder answer. Explain that driver pay is built from base salary, per-delivery counts, deductions, and contract terms, then rounded to three decimals for KWD.',
+        'Drivers are paid piece-rate: total driver amount = cost per order × completed orders, plus bonus or tips. What actually gets transferred is that total minus deductions and minus any cash dues the driver still owes. Completed orders are entered on the salary record itself — the daily delivery log is kept separately. FleetHub also tracks gross income per record — total income minus the driver’s amount — so you see the margin on every driver, every month. Office employees run on a completely separate fixed-salary system (base + overtime + allowances − deductions), and there is one salary record per person per month in both.',
     },
     {
       question: 'How does document expiry tracking work?',
       answer:
-        'Placeholder answer. Explain that licences, residencies, vehicle permits, and insurance carry expiry dates, and the system alerts the right staff before each one lapses.',
+        'The alert list is recalculated from live records every time you open it — nothing to mark as read, nothing to keep in sync. It covers driver and employee civil IDs, licences, and contracts; vehicle registration and service due dates; company documents, including sections that are missing entirely; and commitment contracts like accommodation or car rental. Most alerts flag both what has already expired and what lapses within 30 days — contracts use 90 days — and everything is filtered to the companies and permissions of the signed-in user.',
     },
     {
       question: 'Is FleetHub used by drivers or customers?',
       answer:
-        'Placeholder answer. Explain that FleetHub is an internal back-office system — fleet managers, HR, accountants, and ops staff are the only users.',
+        'Neither — it is an internal back-office system. Every login belongs to your own staff: fleet managers, operations, HR, and accounts. Drivers and vehicles are records you manage, not app users, so there is no driver app and no customer-facing side.',
     },
   ],
 };
