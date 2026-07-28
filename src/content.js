@@ -32,7 +32,8 @@ export const stats = {
   label: 'By the Numbers',
   headingTop: 'Built for Real',
   headingAccent: 'Fleet Operations',
-  subheading: 'FleetHub keeps every company, driver, and dirham in sync.',
+  subheading:
+    'Every company, driver, and dinar — accounted for, every single day.',
   cards: [
     {
       stat: 'Multi-Company',
@@ -48,18 +49,14 @@ export const stats = {
       caption: 'Always current, never stale',
       points: [
         'Document expiry alerts',
-        'Live delivery tracking',
+        'Live updating',
         'Instant notifications',
       ],
     },
     {
-      stat: 'KWD-Native',
-      caption: 'Built around local finance',
-      points: [
-        'Arabic payment vouchers',
-        '3-decimal precision',
-        'Built for Kuwait',
-      ],
+      stat: 'Ops-Proven',
+      caption: 'Runs the daily grind',
+      points: ['Daily delivery logs', 'Petty cash & deductions', 'Full audit trail'],
     },
   ],
 };
