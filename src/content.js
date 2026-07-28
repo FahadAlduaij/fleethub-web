@@ -123,7 +123,7 @@ export const roles = {
     'One system, scoped to each role — every user sees only the companies and pages they are assigned.',
   cards: [
     {
-      title: 'Operations & Fleet',
+      title: 'Operations',
       art: 'ops',
       description:
         'Keep drivers, vehicles, and daily movement on record instead of in a group chat.',
@@ -134,7 +134,7 @@ export const roles = {
       ],
     },
     {
-      title: 'HR & Admin',
+      title: 'HR',
       art: 'hr',
       description:
         'Own every personnel file and know what lapses before it lapses, not after.',
@@ -145,7 +145,7 @@ export const roles = {
       ],
     },
     {
-      title: 'Accounts & Payroll',
+      title: 'Finance',
       art: 'accounts',
       description:
         'Close the month with the numbers, the paperwork, and the audit trail in one place.',

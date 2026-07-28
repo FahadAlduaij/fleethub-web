@@ -9,14 +9,14 @@ import {
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import RouteRoundedIcon from '@mui/icons-material/RouteRounded';
 import BadgeRoundedIcon from '@mui/icons-material/BadgeRounded';
-import ReceiptLongRoundedIcon from '@mui/icons-material/ReceiptLongRounded';
+import ReceiptRoundedIcon from '@mui/icons-material/ReceiptRounded';
 import SectionHeading from './SectionHeading';
 import { roles } from '../content';
 
 const ART = {
   ops: RouteRoundedIcon,
   hr: BadgeRoundedIcon,
-  accounts: ReceiptLongRoundedIcon,
+  accounts: ReceiptRoundedIcon,
 };
 
 function CheckPoint({ children }) {
