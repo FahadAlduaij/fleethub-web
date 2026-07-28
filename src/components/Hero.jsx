@@ -60,8 +60,8 @@ export default function Hero() {
       component="section"
       sx={{
         position: 'relative',
-        pt: { xs: 6, md: 9 },
-        pb: { xs: 8, md: 12 },
+        pt: { xs: 9, md: 14 },
+        pb: { xs: 11, md: 17 },
         overflow: 'hidden',
         // Soft primary glow behind the headline
         '&::before': {
