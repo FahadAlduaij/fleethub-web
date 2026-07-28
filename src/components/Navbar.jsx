@@ -106,7 +106,7 @@ export default function Navbar() {
         onClose={() => setOpen(false)}
         slotProps={{
           paper: {
-            sx: { width: '100vw', maxWidth: '100%', bgcolor: 'background.default', p: 2 },
+            sx: { width: 280, maxWidth: '80%', bgcolor: 'background.default', p: 2 },
           },
         }}
       >
