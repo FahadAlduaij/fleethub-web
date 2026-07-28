@@ -83,7 +83,7 @@ export const howItWorks = {
     'Powerful tools that help you manage people, vehicles, and payroll with confidence.',
   cards: [
     {
-      title: 'Drivers & Employees',
+      title: 'Employee Management',
       description:
         'Upload civil IDs, licences, and passports, then track contracts and vehicle assignments for every person on your team.',
       art: 'people',
@@ -94,7 +94,7 @@ export const howItWorks = {
         'FleetHub driver profile header showing the driver’s ID, company, aggregator, and status',
     },
     {
-      title: 'Vehicles & Maintenance',
+      title: 'Vehicle Maintenance',
       description:
         'Assign vehicles to drivers, log maintenance, and print bilingual handover forms and reports on demand.',
       art: 'vehicle',
@@ -106,7 +106,7 @@ export const howItWorks = {
         'FleetHub vehicle service form with odometer, maintenance, and cost fields',
     },
     {
-      title: 'Salaries & Expenses',
+      title: 'Expense Tracking',
       description:
         'Run piece-rate and fixed payroll, log petty cash and deductions, and see exactly where every dinar went this month.',
       art: 'payroll',
