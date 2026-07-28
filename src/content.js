@@ -86,7 +86,7 @@ export const howItWorks = {
     {
       title: 'Vehicles & Maintenance',
       description:
-        'Assign drivers to vehicles, log maintenance, and print bilingual handover forms and reports on demand.',
+        'Assign vehicles to drivers, log maintenance, and print bilingual handover forms and reports on demand.',
       art: 'vehicle',
       image: '/service.png',
       imageAlt:
@@ -95,7 +95,7 @@ export const howItWorks = {
     {
       title: 'Salaries & Expenses',
       description:
-        'Automated payroll, petty cash, and contract-based expense tracking.',
+        'Piece-rate and fixed payroll, petty cash, and contract-based expense tracking.',
       art: 'payroll',
       image: '/salary.png',
       // Wide shot — shown whole rather than cropped to the panel
@@ -104,9 +104,9 @@ export const howItWorks = {
         'FleetHub expense breakdown chart totalling 718.000 KWD across salaries, services, and petty cash',
     },
     {
-      title: 'Live Notification',
+      title: 'Live Notifications',
       description:
-        'Get alerted before civil IDs, licences, and vehicle registrations expire — live across every company, with no manual chasing.',
+        'Get alerted before civil IDs, licences, and registrations expire — plus salaries never entered and drivers running at a loss. Live across every company, with no manual chasing.',
       art: 'alerts',
       image: '/notification.png',
       imageAlt:
@@ -128,7 +128,7 @@ export const roles = {
       description:
         'Keep drivers, vehicles, and daily movement on record instead of in a group chat.',
       points: [
-        'Driver-to-vehicle assignments',
+        'Vehicle assignments per driver',
         'Daily delivery logs',
         'Maintenance & handover forms',
       ],
@@ -168,7 +168,7 @@ export const faq = {
     {
       question: 'Can one user manage several companies from a single account?',
       answer:
-        'Yes. Each user gets a set of assigned companies plus per-page permissions, and a top-bar selector narrows every list, dashboard, and export to whichever companies they pick. The two controls are independent, so an accountant can hold payroll access across three companies while an HR user sees only one — and a user with no companies assigned sees nothing at all. Viewer-role accounts can read but never write.',
+        'Yes. Each user gets a set of assigned companies plus per-page permissions, and a top-bar selector narrows every list, dashboard, and export to whichever companies they pick. The two controls are independent, so an accountant can hold payroll access across three companies while an HR user sees only one — and a user with no companies assigned sees nothing at all. Anything outside a user’s companies is not refused — it simply is not there. Viewer-role accounts can read but never write.',
     },
     {
       question: 'Does FleetHub generate Arabic payment vouchers?',
@@ -183,7 +183,7 @@ export const faq = {
     {
       question: 'How does document expiry tracking work?',
       answer:
-        'The alert list is recalculated from live records every time you open it — nothing to mark as read, nothing to keep in sync. It covers driver and employee civil IDs, licences, and contracts; vehicle registration and service due dates; company documents, including sections that are missing entirely; and commitment contracts like accommodation or car rental. Most alerts flag both what has already expired and what lapses within 30 days — contracts use 90 days — and everything is filtered to the companies and permissions of the signed-in user.',
+        'The alert list is recalculated from live records every time you open it — nothing to mark as read, nothing to keep in sync. It covers driver and employee civil IDs, licences, and contracts; vehicle registration and service due dates; company documents, including sections that are missing entirely; and commitment contracts like accommodation or car rental. It also catches money problems the same way — a salary that was never entered for the month, or a driver whose gross income went negative. Most alerts flag both what has already expired and what lapses within 30 days — contracts use 90 days — and everything is filtered to the companies and permissions of the signed-in user.',
     },
     {
       question: 'Is FleetHub used by drivers or customers?',

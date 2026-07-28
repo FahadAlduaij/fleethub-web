@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
   <!-- PLACEHOLDER FleetHub mark — brand blue tile with an "F" cut out.
+       The F is optically centred: its bounding box runs x 10→23, y 7→25.
        Replace with the real logo (keep a 32×32 viewBox and safe margins). -->
   <rect width="32" height="32" rx="8" fill="#116FEB" />
   <g fill="#FFFFFF">
-    <rect x="9" y="7" width="4" height="18" rx="1.5" />
-    <rect x="9" y="7" width="14" height="4" rx="1.5" />
-    <rect x="9" y="14" width="11" height="4" rx="1.5" />
+    <rect x="10" y="7" width="4" height="18" rx="1.5" />
+    <rect x="10" y="7" width="13" height="4" rx="1.5" />
+    <rect x="10" y="14" width="10" height="4" rx="1.5" />
   </g>
 </svg>
