@@ -21,6 +21,8 @@ export const nav = {
 export const hero = {
   badge: 'Trusted by fleet operators in Kuwait',
   headlineTop: 'Run Your Entire Fleet Operation',
+  // Shorter first line on phones, where the full one wraps awkwardly
+  headlineTopMobile: 'Run Your Operation',
   headlineAccent: 'From One Place',
   subhead:
     'Manage drivers, vehicles, deliveries, and payroll across multiple companies — built for Kuwait delivery fleets.',

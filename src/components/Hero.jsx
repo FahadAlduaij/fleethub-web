@@ -84,7 +84,12 @@ export default function Hero() {
             </Typography>
 
             <Typography variant="h1" component="h1" sx={{ maxWidth: 1120 }}>
-              {hero.headlineTop}
+              <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
+                {hero.headlineTop}
+              </Box>
+              <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' } }}>
+                {hero.headlineTopMobile}
+              </Box>
               <Box
                 component="br"
                 sx={{ display: { xs: 'none', sm: 'block' } }}
@@ -102,18 +107,24 @@ export default function Hero() {
             </Typography>
 
             <Stack
-              direction={{ xs: 'column', sm: 'row' }}
+              direction="row"
               spacing={1.5}
               sx={{
                 pt: 1,
-                width: { xs: '100%', sm: 'auto' },
                 alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
               <ActionButton href="#cta" size="large">
                 {hero.primaryCta}
               </ActionButton>
-              <ActionButton href="#how-it-works" size="large" variant="soft">
+              {/* Secondary CTA is desktop-only — one clear action on phones */}
+              <ActionButton
+                href="#how-it-works"
+                size="large"
+                variant="soft"
+                sx={{ display: { xs: 'none', sm: 'inline-flex' } }}
+              >
                 {hero.secondaryCta}
               </ActionButton>
             </Stack>
