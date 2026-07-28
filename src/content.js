@@ -54,7 +54,7 @@ export const stats = {
       ],
     },
     {
-      stat: 'Ops-Proven',
+      stat: 'Day-to-Day',
       caption: 'Runs the daily grind',
       points: ['Daily delivery logs', 'Petty cash & deductions', 'Full audit trail'],
     },
