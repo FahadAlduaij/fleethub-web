@@ -19,8 +19,9 @@ const ART = {
   alerts: NotificationsActiveRoundedIcon,
 };
 
-function ArtPanel({ art, image, alt, zoom = 1 }) {
+function ArtPanel({ art, image, alt, zoom = 1, fit = 'cover' }) {
   const Icon = ART[art];
+  const contained = fit === 'contain';
   return (
     <Box
       aria-hidden={!image}
@@ -47,34 +48,25 @@ function ArtPanel({ art, image, alt, zoom = 1 }) {
       }}
     >
       {image ? (
-        <>
-          <Box
-            component="img"
-            src={image}
-            alt={alt}
-            sx={{
-              position: 'relative',
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center top',
-              // Dense shots (wide tables) need enlarging to stay legible
-              transform: `scale(${zoom})`,
-              transformOrigin: 'left top',
-            }}
-          />
-          {/* Softens the bottom crop so the shot fades out instead of being sliced */}
-          <Box
-            aria-hidden
-            sx={{
-              position: 'absolute',
-              inset: 'auto 0 0 0',
-              height: '38%',
-              background: (theme) =>
-                `linear-gradient(to bottom, transparent, ${theme.palette.background.paper})`,
-            }}
-          />
-        </>
+        <Box
+          component="img"
+          src={image}
+          alt={alt}
+          sx={{
+            // Absolute so the panel dictates the box — otherwise the image
+            // sizes itself from its own ratio and overflows the crop
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: fit,
+            objectPosition: contained ? 'center' : 'center top',
+            p: contained ? { xs: 1.5, md: 2 } : 0,
+            // Dense shots (wide tables) need enlarging to stay legible
+            transform: `scale(${zoom})`,
+            transformOrigin: contained ? 'center' : 'left top',
+          }}
+        />
       ) : (
         <Box
           sx={{
@@ -86,7 +78,8 @@ function ArtPanel({ art, image, alt, zoom = 1 }) {
             color: 'primary.contrastText',
             display: 'grid',
             placeItems: 'center',
-            boxShadow: (theme) => `0 26px 46px -20px ${theme.palette.brand.glow}`,
+            boxShadow: (theme) =>
+              `0 26px 46px -20px ${theme.palette.brand.glow}`,
           }}
         >
           <Icon sx={{ fontSize: { xs: 40, md: 48 } }} />
@@ -131,12 +124,15 @@ export default function HowItWorks() {
                   image={card.image}
                   alt={card.imageAlt}
                   zoom={card.imageZoom}
+                  fit={card.imageFit}
                 />
                 <Box sx={{ px: { xs: 1, md: 1.5 }, pt: 3, pb: 1.5 }}>
                   <Typography variant="h5" sx={{ mb: 1 }}>
                     {card.title}
                   </Typography>
-                  <Typography sx={{ color: 'text.secondary' }}>{card.description}</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>
+                    {card.description}
+                  </Typography>
                 </Box>
               </Box>
             </Grid>

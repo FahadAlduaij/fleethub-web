@@ -80,22 +80,22 @@ export const howItWorks = {
     {
       title: 'Vehicles & Maintenance',
       description:
-        'Assign drivers to vehicles, log maintenance, and keep every service record in one place.',
+        'Assign drivers to vehicles, log maintenance, and print bilingual handover forms and reports on demand.',
       art: 'vehicle',
       image: '/service.png',
       imageAlt:
-        'FleetHub create service form with service date, odometer, maintenance type, and cost in KWD',
+        'FleetHub bilingual vehicle handover form with vehicle details and a condition inspection diagram',
     },
     {
       title: 'Salaries & Expenses',
       description:
-        'Automated payroll, petty cash, and contract-based expense tracking — all in KWD.',
+        'Automated payroll, petty cash, and contract-based expense tracking.',
       art: 'payroll',
       image: '/salary.png',
-      // Wide, dense table — enlarged so the columns stay readable in the card
-      imageZoom: 1.8,
+      // Wide shot — shown whole rather than cropped to the panel
+      imageFit: 'contain',
       imageAlt:
-        'FleetHub bulk driver salary sheet with base salary, bonus, deductions, and transferable amounts in KWD',
+        'FleetHub expense breakdown chart totalling 718.000 KWD across salaries, services, and petty cash',
     },
     {
       title: 'Live Notification',
