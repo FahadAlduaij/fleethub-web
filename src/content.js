@@ -115,7 +115,7 @@ export const howItWorks = {
 
 export const roles = {
   label: 'Who It’s For',
-  headingTop: 'Trusted by the People',
+  headingTop: 'Built for the People',
   headingAccent: 'Running the Fleet',
   subheading:
     'One system, scoped to each role — every user sees only the companies and pages they are assigned.',
