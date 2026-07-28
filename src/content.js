@@ -88,8 +88,10 @@ export const howItWorks = {
         'Upload civil IDs, licences, and passports, then track contracts and vehicle assignments for every person on your team.',
       art: 'people',
       image: '/driverprofile.png',
+      // Very wide (1066×314) — shown whole rather than cropped to the panel
+      imageFit: 'contain',
       imageAlt:
-        'FleetHub driver profile showing civil ID, licence expiry, contact, and work details',
+        'FleetHub driver profile header showing the driver’s ID, company, aggregator, and status',
     },
     {
       title: 'Vehicles & Maintenance',
@@ -118,7 +120,7 @@ export const howItWorks = {
     {
       title: 'Live Notifications',
       description:
-        'Get alerted before civil IDs, licences, and registrations expire — plus salaries never entered and drivers running at a loss. Live across every company, with no manual chasing.',
+        'See what is about to expire — civil IDs, licences, registrations, and contracts — plus salaries you have not entered yet. The list updates itself across every company.',
       art: 'alerts',
       image: '/notification.png',
       imageAlt:
