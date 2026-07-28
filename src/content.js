@@ -97,8 +97,11 @@ export const howItWorks = {
         'Assign vehicles to drivers, log maintenance, and print bilingual handover forms and reports on demand.',
       art: 'vehicle',
       image: '/service.png',
+      // Wider than the panel (1076×518) — shown whole so the units on the right
+      // survive the narrow mobile crop
+      imageFit: 'contain',
       imageAlt:
-        'FleetHub bilingual vehicle handover form with vehicle details and a condition inspection diagram',
+        'FleetHub vehicle service form with odometer, maintenance, and cost fields',
     },
     {
       title: 'Salaries & Expenses',
