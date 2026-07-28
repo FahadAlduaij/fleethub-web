@@ -15,7 +15,7 @@ export const nav = {
     { label: 'Who It’s For', href: '#roles' },
     { label: 'FAQ', href: '#faq' },
   ],
-  cta: 'Get Started',
+  cta: 'Book a Demo',
 };
 
 export const hero = {
@@ -26,8 +26,8 @@ export const hero = {
   headlineAccent: 'From One Place',
   subhead:
     'Manage drivers, vehicles, deliveries, and payroll across multiple companies — built for Kuwait delivery fleets.',
-  primaryCta: 'Get Started',
-  secondaryCta: 'Watch Demo',
+  primaryCta: 'Book a Demo',
+  secondaryCta: 'See How It Works',
 };
 
 export const stats = {
@@ -77,7 +77,7 @@ export const howItWorks = {
     {
       title: 'Drivers & Employees',
       description:
-        'Track documents, contracts, and assignments for every person on your team.',
+        'Upload civil IDs, licences, and passports, then track contracts and vehicle assignments for every person on your team.',
       art: 'people',
       image: '/driverprofile.png',
       imageAlt:
