@@ -174,7 +174,6 @@ export const cta = {
   label: 'Get Started',
   headlineTop: 'Ready to streamline your fleet operations?',
   headlineAccent: 'Start managing smarter today.',
-  primaryCta: 'Get Started',
   secondaryCta: 'Talk to Sales',
 };
 

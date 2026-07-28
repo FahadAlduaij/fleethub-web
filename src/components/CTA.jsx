@@ -49,8 +49,11 @@ export default function CTA() {
               spacing={1.5}
               sx={{ alignItems: 'center', pt: 1 }}
             >
-              <ActionButton size="large">{cta.primaryCta}</ActionButton>
-              <ActionButton size="large" variant="soft" sx={{ bgcolor: 'background.paper' }}>
+              <ActionButton
+                size="large"
+                variant="soft"
+                sx={{ bgcolor: 'background.paper' }}
+              >
                 {cta.secondaryCta}
               </ActionButton>
             </Stack>
