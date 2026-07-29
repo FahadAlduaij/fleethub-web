@@ -50,6 +50,21 @@
       rel="stylesheet"
     />
     <title>FleetHub</title>
+    <!-- Google Analytics 4. The measurement ID is a public identifier, not a
+         secret. Enhanced measurement covers outbound clicks, so the WhatsApp
+         links are tracked without extra code. -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JXB345LZ78"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-JXB345LZ78');
+    </script>
   </head>
   <body>
     <div id="root"></div>
