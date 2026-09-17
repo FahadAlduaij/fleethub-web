@@ -27,7 +27,7 @@ run the dev server and check the page at desktop (1440×900) and mobile (390×84
 If you start a dev server to check something, kill it when you are done.
 
 Deployed on Vercel (`vercel.json`, SPA rewrite to `/index.html`). Live at
-`https://fleethub-nu.vercel.app/`.
+`https://fleethub.solohub.tech/`.
 
 ## Architecture
 
@@ -87,9 +87,10 @@ both widths — its pixel dimensions decide the right treatment.
 ### Assets
 
 Everything in `public/` is served at the site root. `favicon.svg` is the real logo mark
-recoloured to `#116FEB`. `og-image.png` (1200×630) is the link-preview card and
-`fleethub-whatsapp.png` (1024×1024) is the WhatsApp profile image; both are the white
-mark on brand blue.
+recoloured to `#116FEB`. `og-dashboard.png` (1200×630) is the link-preview card — the
+top of `dashboard.png` with the sidebar and test-data rows cropped out.
+`fleethub-whatsapp.png` (1024×1024) is the WhatsApp profile image and `og-image.png`
+(1200×630, now unused) the former preview card; both are the white mark on brand blue.
 
 Link-preview meta tags are in `index.html` and **must use absolute URLs** — scrapers do
 not resolve relative paths. If the domain changes, update all three occurrences.
