@@ -1,9 +1,11 @@
 import { Box, Container, Stack, Typography } from '@mui/material';
 import ActionButton from './ActionButton';
 import { PillLabel } from './SectionHeading';
-import { contact, cta } from '../content';
+import { useContent } from '../i18n.jsx';
 
 export default function CTA() {
+  const { contact, cta } = useContent();
+
   return (
     <Box component="section" id="cta" sx={{ py: { xs: 6, md: 10 } }}>
       <Container maxWidth="lg">

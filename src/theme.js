@@ -11,7 +11,7 @@ const BRAND = {
   card: '#F0F5F9',
 };
 
-const theme = createTheme({
+const base = {
   palette: {
     mode: 'light',
     background: {
@@ -118,7 +118,52 @@ const theme = createTheme({
     MuiLink: {
       defaultProps: { underline: 'none' },
     },
+    MuiStack: {
+      // Stack's default spacing is a physical `margin-left` on row layouts,
+      // which lands on the wrong side in RTL. `gap` is direction-agnostic.
+      defaultProps: { useFlexGap: true },
+    },
   },
-});
+};
 
-export default theme;
+/**
+ * Arabic overrides on top of `base`. Only direction and typography change —
+ * the palette, shape and component overrides are shared.
+ *
+ * Negative letter-spacing breaks Arabic letter joins, so tracking goes to 0,
+ * and Cairo's tall ascenders need a little more leading on the display sizes.
+ */
+const AR_TYPOGRAPHY = {
+  fontFamily:
+    "'Cairo', 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+  h1: { letterSpacing: 0, lineHeight: 1.25 },
+  h2: { letterSpacing: 0, lineHeight: 1.25 },
+  h3: { letterSpacing: 0, lineHeight: 1.3 },
+  h4: { letterSpacing: 0 },
+  h5: { letterSpacing: 0 },
+  h6: { letterSpacing: 0 },
+};
+
+/** Builds the MUI theme for a language — 'en' (LTR) or 'ar' (RTL). */
+export function createAppTheme(lang) {
+  if (lang !== 'ar') {
+    return createTheme(base);
+  }
+
+  return createTheme({
+    ...base,
+    direction: 'rtl',
+    typography: {
+      ...base.typography,
+      fontFamily: AR_TYPOGRAPHY.fontFamily,
+      h1: { ...base.typography.h1, ...AR_TYPOGRAPHY.h1 },
+      h2: { ...base.typography.h2, ...AR_TYPOGRAPHY.h2 },
+      h3: { ...base.typography.h3, ...AR_TYPOGRAPHY.h3 },
+      h4: { ...base.typography.h4, ...AR_TYPOGRAPHY.h4 },
+      h5: { ...base.typography.h5, ...AR_TYPOGRAPHY.h5 },
+      h6: { ...base.typography.h6, ...AR_TYPOGRAPHY.h6 },
+    },
+  });
+}
+
+export default createAppTheme('en');

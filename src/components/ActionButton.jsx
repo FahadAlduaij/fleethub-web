@@ -1,5 +1,6 @@
 import { Box, Button } from '@mui/material';
 import NorthEastRoundedIcon from '@mui/icons-material/NorthEastRounded';
+import { useLanguage } from '../i18n.jsx';
 
 /**
  * Pill CTA button with a trailing circular arrow badge.
@@ -15,6 +16,7 @@ export default function ActionButton({
   sx,
   ...props
 }) {
+  const { isAr } = useLanguage();
   const solid = variant === 'solid';
   const large = size === 'large';
 
@@ -23,8 +25,8 @@ export default function ActionButton({
       href={href}
       sx={{
         position: 'relative',
-        pl: large ? 3.25 : 2.75,
-        pr: 0.75,
+        paddingInlineStart: large ? 3.25 : 2.75,
+        paddingInlineEnd: 0.75,
         py: 0.75,
         gap: large ? 1.75 : 1.25,
         fontSize: large ? '1rem' : '0.9375rem',
@@ -35,7 +37,8 @@ export default function ActionButton({
         boxShadow: solid
           ? (theme) => `0 12px 28px -10px ${theme.palette.brand.glow}`
           : 'none',
-        transition: 'transform .18s ease, box-shadow .18s ease, background-color .18s ease',
+        transition:
+          'transform .18s ease, box-shadow .18s ease, background-color .18s ease',
         '&:hover': {
           bgcolor: solid ? 'primary.main' : 'brand.softPrimary',
           transform: 'translateY(-1px)',
@@ -63,7 +66,13 @@ export default function ActionButton({
           color: solid ? 'primary.contrastText' : 'primary.contrastText',
         }}
       >
-        <NorthEastRoundedIcon sx={{ fontSize: large ? 18 : 16 }} />
+        {/* Mirrored in RTL so the arrow points north-west, with the text flow */}
+        <NorthEastRoundedIcon
+          sx={{
+            fontSize: large ? 18 : 16,
+            transform: isAr ? 'scaleX(-1)' : 'none',
+          }}
+        />
       </Box>
     </Button>
   );

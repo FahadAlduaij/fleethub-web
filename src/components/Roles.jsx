@@ -11,7 +11,7 @@ import RouteRoundedIcon from '@mui/icons-material/RouteRounded';
 import BadgeRoundedIcon from '@mui/icons-material/BadgeRounded';
 import ReceiptRoundedIcon from '@mui/icons-material/ReceiptRounded';
 import SectionHeading from './SectionHeading';
-import { roles } from '../content';
+import { useContent } from '../i18n.jsx';
 
 const ART = {
   ops: RouteRoundedIcon,
@@ -44,6 +44,8 @@ function CheckPoint({ children }) {
 }
 
 export default function Roles() {
+  const { roles } = useContent();
+
   return (
     <Box component="section" id="roles" sx={{ py: { xs: 8, md: 14 } }}>
       <Container maxWidth="lg">

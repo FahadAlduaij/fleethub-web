@@ -1,7 +1,18 @@
-import { Box, Container, Divider, Grid, Link, Stack, Typography } from '@mui/material';
-import { brand, footer } from '../content';
+import {
+  Box,
+  Container,
+  Divider,
+  Grid,
+  Link,
+  Stack,
+  Typography,
+} from '@mui/material';
+import { useContent, useLanguage } from '../i18n.jsx';
 
 export default function Footer() {
+  const { brand, footer } = useContent();
+  const { isAr } = useLanguage();
+
   return (
     <Box
       component="footer"
@@ -15,14 +26,36 @@ export default function Footer() {
     >
       <Container maxWidth="lg">
         <Grid container spacing={{ xs: 5, md: 4 }}>
-          {/* Brand block — text wordmark only, no logo mark */}
+          {/* Brand block — text wordmark, then a two-line Powered by SoloHub */}
           <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h5" sx={{ fontWeight: 800 }}>
               {brand.name}
             </Typography>
-            <Typography sx={{ mt: 1.5, opacity: 0.75, fontSize: '0.9375rem' }}>
-              {brand.maker}
-            </Typography>
+            <Box sx={{ mt: 2, opacity: 0.85, lineHeight: 1 }}>
+              <Typography
+                sx={{
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  // Tracking breaks Arabic letter joins.
+                  letterSpacing: isAr ? 0 : '0.08em',
+                  lineHeight: 1.3,
+                }}
+              >
+                {brand.poweredBy.label}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: '1.375rem',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.04em',
+                  lineHeight: 1.1,
+                }}
+              >
+                {brand.poweredBy.name}
+              </Typography>
+            </Box>
           </Grid>
 
           <Grid size={{ xs: 12, md: 8 }}>
@@ -49,7 +82,10 @@ export default function Footer() {
                           fontSize: '0.9375rem',
                           opacity: 0.92,
                           width: 'fit-content',
-                          '&:hover': { opacity: 1, textDecoration: 'underline' },
+                          '&:hover': {
+                            opacity: 1,
+                            textDecoration: 'underline',
+                          },
                         }}
                       >
                         {label}
@@ -62,7 +98,9 @@ export default function Footer() {
           </Grid>
         </Grid>
 
-        <Divider sx={{ borderColor: 'rgba(255,255,255,0.22)', my: { xs: 4, md: 5 } }} />
+        <Divider
+          sx={{ borderColor: 'rgba(255,255,255,0.22)', my: { xs: 4, md: 5 } }}
+        />
 
         <Stack
           direction={{ xs: 'column', sm: 'row' }}

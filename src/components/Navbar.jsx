@@ -14,10 +14,12 @@ import {
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ActionButton from './ActionButton';
-import { brand, nav } from '../content';
+import { LANG_TOGGLE_LABEL, useContent, useLanguage } from '../i18n.jsx';
 
 /** Floating pill navbar — text wordmark only, no logo mark. */
 export default function Navbar() {
+  const { brand, nav } = useContent();
+  const { isAr, toggle } = useLanguage();
   const [open, setOpen] = useState(false);
 
   return (
@@ -49,7 +51,11 @@ export default function Navbar() {
           {/* Wordmark only — no logo mark in the navbar */}
           <Typography
             variant="h6"
-            sx={{ fontWeight: 800, letterSpacing: '-0.02em', mr: 'auto' }}
+            sx={{
+              fontWeight: 800,
+              letterSpacing: '-0.02em',
+              marginInlineEnd: 'auto',
+            }}
           >
             {brand.name}
           </Typography>
@@ -58,7 +64,10 @@ export default function Navbar() {
           <Stack
             direction="row"
             spacing={3.5}
-            sx={{ display: { xs: 'none', md: 'flex' }, mr: 'auto' }}
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              marginInlineEnd: 'auto',
+            }}
           >
             {nav.links.map((link) => (
               <Link
@@ -86,6 +95,33 @@ export default function Navbar() {
             >
               {nav.cta}
             </ActionButton>
+            {/* Always visible — the CTA hides on xs, the language switch does not */}
+            <Box
+              component="button"
+              type="button"
+              onClick={toggle}
+              aria-label={isAr ? 'Switch to English' : 'Switch to Arabic'}
+              lang={isAr ? 'en' : 'ar'}
+              sx={{
+                height: 42,
+                px: 2,
+                borderRadius: 999,
+                border: '1px solid',
+                borderColor: 'brand.border',
+                bgcolor: 'background.paper',
+                color: 'text.primary',
+                fontFamily: isAr ? 'inherit' : "'Cairo', sans-serif",
+                fontWeight: 700,
+                fontSize: '0.875rem',
+                lineHeight: 1,
+                cursor: 'pointer',
+                whiteSpace: 'nowrap',
+                transition: 'background-color .18s ease',
+                '&:hover': { bgcolor: 'brand.softPrimary' },
+              }}
+            >
+              {LANG_TOGGLE_LABEL[isAr ? 'en' : 'ar']}
+            </Box>
             <IconButton
               onClick={() => setOpen(true)}
               aria-label="Open menu"
@@ -104,14 +140,23 @@ export default function Navbar() {
         </Stack>
       </Container>
 
-      {/* Mobile navigation drawer */}
+      {/* Mobile navigation drawer.
+          MUI mirrors the slide-in direction for `anchor="right"` when the theme
+          is RTL, but the paper itself is pinned with a physical `right: 0` that
+          only a stylis RTL plugin would flip — so pin it by hand in Arabic. */}
       <Drawer
         anchor="right"
         open={open}
         onClose={() => setOpen(false)}
         slotProps={{
           paper: {
-            sx: { width: 280, maxWidth: '80%', bgcolor: 'background.default', p: 2 },
+            sx: {
+              width: 280,
+              maxWidth: '80%',
+              bgcolor: 'background.default',
+              p: 2,
+              ...(isAr && { left: 0, right: 'auto' }),
+            },
           },
         }}
       >

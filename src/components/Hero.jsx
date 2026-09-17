@@ -5,7 +5,7 @@ import ReceiptLongRoundedIcon from '@mui/icons-material/ReceiptLongRounded';
 import RouteRoundedIcon from '@mui/icons-material/RouteRounded';
 import ActionButton from './ActionButton';
 import DashboardMockup from './DashboardMockup';
-import { hero } from '../content';
+import { useContent } from '../i18n.jsx';
 
 /**
  * DECORATIVE ICON SQUARES — placeholders.
@@ -55,6 +55,8 @@ function FloatingIcon({ Icon, pos, rotate }) {
 }
 
 export default function Hero() {
+  const { hero } = useContent();
+
   return (
     <Box
       component="section"
@@ -84,10 +86,16 @@ export default function Hero() {
             </Typography>
 
             <Typography variant="h1" component="h1" sx={{ maxWidth: 1120 }}>
-              <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
+              <Box
+                component="span"
+                sx={{ display: { xs: 'none', sm: 'inline' } }}
+              >
                 {hero.headlineTop}
               </Box>
-              <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' } }}>
+              <Box
+                component="span"
+                sx={{ display: { xs: 'inline', sm: 'none' } }}
+              >
                 {hero.headlineTopMobile}
               </Box>
               <Box

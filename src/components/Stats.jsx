@@ -1,7 +1,14 @@
-import { Box, Container, Divider, Grid, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Container,
+  Divider,
+  Grid,
+  Stack,
+  Typography,
+} from '@mui/material';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import SectionHeading from './SectionHeading';
-import { stats } from '../content';
+import { useContent } from '../i18n.jsx';
 
 function CheckPoint({ children }) {
   return (
@@ -21,12 +28,16 @@ function CheckPoint({ children }) {
       >
         <CheckRoundedIcon sx={{ fontSize: 15 }} />
       </Box>
-      <Typography sx={{ fontSize: '0.9375rem', color: 'text.primary' }}>{children}</Typography>
+      <Typography sx={{ fontSize: '0.9375rem', color: 'text.primary' }}>
+        {children}
+      </Typography>
     </Stack>
   );
 }
 
 export default function Stats() {
+  const { stats } = useContent();
+
   return (
     <Box component="section" id="features" sx={{ py: { xs: 8, md: 14 } }}>
       <Container maxWidth="lg">
@@ -63,7 +74,9 @@ export default function Stats() {
                 >
                   {card.stat}
                 </Typography>
-                <Typography sx={{ color: 'text.secondary', mt: 1 }}>{card.caption}</Typography>
+                <Typography sx={{ color: 'text.secondary', mt: 1 }}>
+                  {card.caption}
+                </Typography>
 
                 <Divider sx={{ my: { xs: 3, md: 3.5 } }} />
 

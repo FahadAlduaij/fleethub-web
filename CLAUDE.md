@@ -31,12 +31,38 @@ Deployed on Vercel (`vercel.json`, SPA rewrite to `/index.html`). Live at
 
 ## Architecture
 
-### Copy lives in one file
+### Copy lives in one file per language
 
-`src/content.js` is the single source of every user-visible string. Components import
-named exports from it (`hero`, `stats`, `howItWorks`, `roles`, `faq`, `cta`, `footer`,
-`nav`, `brand`, `contact`) and render them. **Never hardcode copy inside JSX** — a
-wording change should be a one-file edit.
+`src/content.js` (English) and `src/content.ar.js` (Arabic) hold every user-visible
+string. They export the same names (`hero`, `stats`, `howItWorks`, `roles`, `faq`,
+`cta`, `footer`, `nav`, `brand`, `contact`) with an **identical object shape** — same
+keys, same array lengths; only string values differ. Components never import them
+directly: they call `useContent()` from `src/i18n.jsx`, which returns the module for
+the active language. **Never hardcode copy inside JSX** — a wording change is an edit
+to both content files. When adding a key, add it to both.
+
+The Arabic copy is deliberately plain, everyday business Arabic with almost no
+diacritics (tashkeel) — keep it that way. Brand names (FleetHub, SoloHub, WhatsApp,
+Excel, CSV) stay in Latin script; digits are Western.
+
+### Language switching and RTL
+
+`src/i18n.jsx` owns the language: `LanguageProvider` keeps `lang` (`'en' | 'ar'`) in
+state, persists it to `localStorage` (`fleethub-lang`), and sets `lang`/`dir` on
+`<html>`. `useLanguage()` gives `{ lang, isAr, dir, setLang, toggle }`. The toggle
+button lives in `Navbar.jsx`, right after the Book a Demo button, and shows the
+language it switches *to*.
+
+RTL is done **without** a stylis RTL plugin, so physical CSS does not auto-flip. Rules:
+
+- Use logical properties for anything horizontal that should mirror:
+  `marginInlineStart/End`, `paddingInlineStart/End` — not `ml`/`mr`/`pl`/`pr`.
+- `Stack` has `useFlexGap: true` set globally in the theme because its default row
+  spacing is a physical `margin-left`.
+- MUI `Drawer` only flips its *slide* direction in RTL; its paper stays pinned with a
+  physical `right: 0`. `Navbar.jsx` pins it to the left by hand when `isAr`.
+- Directional icons (the CTA arrow) get `scaleX(-1)` when `isAr`.
+- Re-check both languages at both widths after any layout change.
 
 `src/App.jsx` composes the sections in render order: Navbar → Hero → Stats → HowItWorks
 → Roles → FAQ → CTA → Footer. Navigation is anchor-scroll only; each section `<Box>`
@@ -44,7 +70,13 @@ carries an `id` that matches an `href` in `nav.links`.
 
 ### Design tokens live in one file
 
-`src/theme.js` is the single source of every colour. **No hex values in
+`src/theme.js` exports `createAppTheme(lang)`; `main.jsx` rebuilds the theme when the
+language changes. Arabic gets `direction: 'rtl'`, a Cairo-first font stack (Cairo is
+loaded alongside Plus Jakarta Sans in `index.html`), zero letter-spacing on headings
+(negative tracking breaks Arabic letter joins) and slightly taller heading line-height.
+Palette, shape and component overrides are shared.
+
+It is the single source of every colour. **No hex values in
 `src/components/`** — pull from the palette instead. Custom tokens beyond stock MUI:
 `brand.card`, `brand.softPrimary`, `brand.softPrimaryStrong`, `brand.border`,
 `brand.glow` (used via `sx={{ bgcolor: 'brand.card' }}` etc.).

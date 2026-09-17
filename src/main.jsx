@@ -1,15 +1,28 @@
-import { StrictMode } from 'react';
+import { StrictMode, useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import App from './App.jsx';
-import theme from './theme.js';
+import { LanguageProvider, useLanguage } from './i18n.jsx';
+import { createAppTheme } from './theme.js';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+/** Rebuilds the theme (direction + Arabic typography) when the language flips. */
+function ThemedApp() {
+  const { lang } = useLanguage();
+  const theme = useMemo(() => createAppTheme(lang), [lang]);
+
+  return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <App />
     </ThemeProvider>
-  </StrictMode>
+  );
+}
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <LanguageProvider>
+      <ThemedApp />
+    </LanguageProvider>
+  </StrictMode>,
 );

@@ -4,7 +4,7 @@ import LocalShippingRoundedIcon from '@mui/icons-material/LocalShippingRounded';
 import PaymentsRoundedIcon from '@mui/icons-material/PaymentsRounded';
 import NotificationsActiveRoundedIcon from '@mui/icons-material/NotificationsActiveRounded';
 import SectionHeading from './SectionHeading';
-import { howItWorks } from '../content';
+import { useContent } from '../i18n.jsx';
 
 /**
  * ILLUSTRATION PLACEHOLDERS.
@@ -90,6 +90,8 @@ function ArtPanel({ art, image, alt, zoom = 1, fit = 'cover', position }) {
 }
 
 export default function HowItWorks() {
+  const { howItWorks } = useContent();
+
   return (
     <Box component="section" id="how-it-works" sx={{ py: { xs: 8, md: 14 } }}>
       <Container maxWidth="lg">

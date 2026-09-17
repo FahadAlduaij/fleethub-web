@@ -5,7 +5,7 @@
 
 export const brand = {
   name: 'FleetHub',
-  maker: 'by SoloHub',
+  poweredBy: { label: 'Powered by', name: 'SoloHub' },
 };
 
 // WhatsApp is the only real contact channel — every CTA points here.

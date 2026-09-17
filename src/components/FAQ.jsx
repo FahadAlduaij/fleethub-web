@@ -8,9 +8,11 @@ import {
 } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import SectionHeading from './SectionHeading';
-import { faq } from '../content';
+import { useContent } from '../i18n.jsx';
 
 export default function FAQ() {
+  const { faq } = useContent();
+
   return (
     <Box component="section" id="faq" sx={{ py: { xs: 8, md: 14 } }}>
       <Container maxWidth="md">
@@ -40,14 +42,26 @@ export default function FAQ() {
                   <AddRoundedIcon sx={{ fontSize: 18 }} />
                 </Box>
               }
-              sx={{ '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': { transform: 'rotate(45deg)' } }}
+              sx={{
+                '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+                  transform: 'rotate(45deg)',
+                },
+              }}
             >
-              <Typography sx={{ fontWeight: 700, fontSize: '1.0625rem', pr: 2 }}>
+              <Typography
+                sx={{
+                  fontWeight: 700,
+                  fontSize: '1.0625rem',
+                  paddingInlineEnd: 2,
+                }}
+              >
                 {item.question}
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography sx={{ color: 'text.secondary' }}>{item.answer}</Typography>
+              <Typography sx={{ color: 'text.secondary' }}>
+                {item.answer}
+              </Typography>
             </AccordionDetails>
           </Accordion>
         ))}
